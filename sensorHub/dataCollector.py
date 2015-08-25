@@ -15,7 +15,8 @@ class DataCollector():
 
     def __init__(self):
         cf = ConfigParser.ConfigParser()
-        cf.read("sensorHub.config")
+	print os.path.dirname(__file__) + "/sensorHub.config"
+        cf.read(os.path.dirname(__file__) + "/sensorHub.config")
         self.apiKey = cf.get("sensor", "apiKey")
         self.deviceId = cf.get("sensor", "deviceId")
         self.cpuTempSensorId = cf.get("sensor", "cpuTempSensorId")
